@@ -1,0 +1,22 @@
+.img
+{
+    height: 100%;
+    /* background-image: url('https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'); */
+    background-size: cover;
+}
+
+.img img{
+    height: 400px;
+    width: 300px;
+}
+
+button
+{
+    margin-right: 1rem;
+}
+
+ngb-rating {
+    color: #FFC107;
+    font-size: 20px;
+}
+

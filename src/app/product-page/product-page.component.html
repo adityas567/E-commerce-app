@@ -1,0 +1,29 @@
+
+<div class="row mt-5 container-fluid product-container">
+    <div class="col img-container d-flex justify-content-center">
+        <div class="img">
+            <img src="{{ProductData.image}}" alt="">
+        </div>
+    </div>
+    <div class="col ml-5">
+    <div class="row">
+        <h1>{{ProductData.title}}</h1>
+    </div>
+    <div class="row">
+        <h6>{{ProductData.description}}</h6>
+    </div>
+    <div class="row d-flex">
+        <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+        <p>{{ProductData.rating.rate}}({{ProductData.rating.count}})</p>
+    </div>
+    <div class="row">
+        <h3>${{ProductData.price}}</h3>
+    </div>
+    <div class="row">
+        <div class="col mr-3">
+            <button class="btn btn-primary">Add to Cart</button>
+            <button class="btn btn-primary">Buy Now</button>
+        </div>
+    </div>
+    </div>
+</div>

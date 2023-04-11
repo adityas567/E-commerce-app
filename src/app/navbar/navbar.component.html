@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <button *ngIf="checkLogin()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav
+    .toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button [routerLink]="['/login']" *ngIf="!checkLogin()" routerLinkActive="router-link-active"  mat-raised-button color="primary">Login</button>
+    <button [routerLink]="['/login']" *ngIf="checkLogin()" routerLinkActive="router-link-active" (click)="checkLogout()"  mat-raised-button color="accent">Logout</button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>people</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav-main">
+        <mat-action-list *ngIf="checkLogin()">
+            <mat-list-item role="listitem">
+                <a href="/all_product">
+                    <mat-icon>home</mat-icon>All Product
+                </a>
+            </mat-list-item>
+            <mat-list-item role="listitem" *ngFor="let item of CatList,index as i">
+                <a href="/category/{{CatList[i]}}">
+                    <mat-icon>home</mat-icon>{{CatList[i]}}
+                </a>
+            </mat-list-item>
+        </mat-action-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  
